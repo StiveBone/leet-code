@@ -39,10 +39,4 @@ public class Arithmetic1 {
             }
         }
     }
-
-    public static void main(String[] args) {
-        String str = "(1-0-123)/1";
-        Arithmetic1 arithmetic1 = new Arithmetic1();
-        System.out.println(arithmetic1.cal(str));
-    }
 }
