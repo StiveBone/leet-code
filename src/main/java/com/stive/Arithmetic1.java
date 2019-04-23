@@ -20,10 +20,11 @@ public class Arithmetic1 {
     }
 
     private void parseCalStr(String calStr) {
+        if (calStr.startsWith("-") || calStr.startsWith("=")) calStr = "0" + calStr;
         StringTokenizer tokenizer = new StringTokenizer(calStr, "()", true);
         while (tokenizer.hasMoreTokens()) {
             String s = tokenizer.nextToken();
-            if (s.matches("(\\d+[+*/\\\\-]\\d+)*([+*/\\\\-]\\d+)*")) {
+            if (s.matches("(\\d+[+*/\\\\-]\\d+)*([+*/\\\\-]\\d+)*(\\d+[+*/\\\\-])*")) {
                 optStr.addLast(s);
             }
             if (")".equals(s)) {
